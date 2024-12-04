@@ -1,0 +1,1 @@
+SELECT t1.Tournament, t1.Year, t3.Winner, t2.Winner_DOB, t1.City, t1.Prize_Money FROM table1 t1 JOIN table3 t3 ON t1.Tournament = t3.Tournament AND t1.Year = t3.Year JOIN table2 t2 ON t3.Winner = t2.Winner;

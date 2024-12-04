@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE university [
+  <!ELEMENT university (college+)>
+  <!ELEMENT college (department+, course+, major+, minor?)>
+  <!ATTLIST college
+    name (AI_MI | CS_EE) #REQUIRED 
+    location (Pohang | Pusan) #REQUIRED>
+
+  <!ELEMENT department (#PCDATA)>
+  
+  <!ELEMENT course (#PCDATA)>
+  <!ATTLIST course
+    courseID ( ML | ChatGPT | GameSoftware | DS | Java | Python | OS ) #REQUIRED>
+  
+  <!ELEMENT major (#PCDATA)>
+  <!ATTLIST major 
+    courseTaken ( ML | ChatGPT | GameSoftware | DS | Java | Python | OS )+  #REQUIRED>
+  
+  <!ELEMENT minor (#PCDATA)>
+  <!ATTLIST minor
+    courseTaken (GameSoftware) #REQUIRED>
+]>
+
+
+<university>
+  <college name = "AI MI" location="Pohang">
+    <department> Department of AI  </department> 
+    <department> Department of CS </department> 
+    <course courseID="ML"> Machine Learning </course>
+    <course courseID="ChatGPT"> Artificial Intelligence </course>
+    <course courseID="GameSoftware"> Game Software Development </course>
+    <major courseTaken="ML ChatGPT">  AI and Computer Engineering -Major   </major>
+    <minor courseTaken="GameSoftware">  Game Software - Minor   </minor>      
+  </college>
+  <college name = "CS EE" location="Pusan">
+    <department> Department of CS </department>
+    <course courseID="DS"> Data Structure </course>
+    <course courseID="Java"> Java Language </course>    
+    <course courseID="Python"> Python for AI</course>  
+    <course courseID="OS"> Operating System</course>  
+    <major courseTaken="DS Java"> Computer Science -Major </major>   
+    <major courseTaken="Java OS"> Computer Science -Major </major> 
+    <major courseTaken="Python Java"> AI and CS  -Major</major>   
+    <major courseTaken="OS DS"> Computer Science  -Major</major> 
+  </college>  
+</university>
